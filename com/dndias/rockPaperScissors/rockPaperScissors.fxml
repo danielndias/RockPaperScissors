@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<GridPane alignment="center" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dndias.rockPaperScissors.Controller">
+   <rowConstraints>
+       <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+       <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+       <RowConstraints minHeight="10.0" prefHeight="230.0" vgrow="SOMETIMES" />
+       <RowConstraints minHeight="10.0" prefHeight="230.0" vgrow="SOMETIMES" />
+       <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+   </rowConstraints>
+   <columnConstraints>
+      <ColumnConstraints minWidth="10.0" prefWidth="900.0" />
+   </columnConstraints>
+   <children>
+      <Label id="mainTitle" alignment="CENTER" contentDisplay="CENTER" text="Play Rock, Paper, Scissors" GridPane.halignment="CENTER" />
+      <Label id="subTitle" text="Choose your method of destruction:" GridPane.rowIndex="1" />
+      <GridPane alignment="CENTER" GridPane.rowIndex="2">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="300.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="300.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="300.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="200.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <FlowPane alignment="CENTER" columnHalignment="CENTER" maxHeight="210.0" maxWidth="210.0" prefHeight="200.0" prefWidth="200.0" prefWrapLength="250.0" styleClass="panelPlayer" GridPane.halignment="CENTER">
+               <children>
+                  <ImageView id="rockImg" fx:id="rockImg" fitHeight="200.0" fitWidth="300.0" onMouseClicked="#imgClicked" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@res/rock.png" />
+                     </image>
+                     <FlowPane.margin>
+                        <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                     </FlowPane.margin>
+                  </ImageView>
+               </children></FlowPane>
+            <FlowPane alignment="CENTER" maxHeight="210.0" maxWidth="210.0" prefHeight="200.0" prefWidth="200.0" styleClass="panelPlayer" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+               <children>
+                   <ImageView id="paperImg" fx:id="paperImg" fitHeight="200.0" fitWidth="300.0" onMouseClicked="#imgClicked" pickOnBounds="true" preserveRatio="true">
+                       <image>
+                           <Image url="@res/paper.png" />
+                       </image>
+                     <FlowPane.margin>
+                        <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                     </FlowPane.margin>
+                  </ImageView>
+               </children></FlowPane>
+            <FlowPane alignment="CENTER" maxHeight="210.0" maxWidth="210.0" prefHeight="200.0" prefWidth="200.0" styleClass="panelPlayer" GridPane.columnIndex="2" GridPane.halignment="CENTER">
+               <children>
+                  <ImageView id="scissorsImg" fx:id="scissorsImg" fitHeight="200.0" fitWidth="300.0" onMouseClicked="#imgClicked" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@res/scissors.png" />
+                     </image>
+                     <FlowPane.margin>
+                        <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                     </FlowPane.margin>
+                  </ImageView>
+               </children></FlowPane>
+         </children>
+      </GridPane>
+      <GridPane GridPane.rowIndex="3">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="300.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="300.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="300.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label maxWidth="150.0" text="Computer chooses:" wrapText="true" GridPane.halignment="RIGHT">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Label>
+            <FlowPane maxHeight="210.0" maxWidth="210.0" prefHeight="200.0" prefWidth="200.0" styleClass="panelComp" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+               <children>
+                  <ImageView id="noneImg" fx:id="noneImg" fitHeight="200.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@res/none.png" />
+                     </image>
+                     <FlowPane.margin>
+                        <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                     </FlowPane.margin>
+                  </ImageView>
+               </children>
+            </FlowPane>
+            <FlowPane alignment="CENTER_LEFT" orientation="VERTICAL" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
+               <children>
+                  <Label id="lblWinner" fx:id="lblWinner" />
+                  <FlowPane prefHeight="38.0" prefWidth="298.0">
+                     <children>
+                        <Label styleClass="scoreLabel" text="Your Score: " />
+                        <Label id="lblPlayerScore" fx:id="lblPlayerScore" />
+                     </children>
+                  </FlowPane>
+                  <FlowPane layoutX="10.0" layoutY="118.0" prefHeight="36.0" prefWidth="298.0">
+                     <children>
+                        <Label styleClass="scoreLabel" text="Computer Score: " />
+                        <Label id="lblCompScore" fx:id="lblCompScore" />
+                     </children>
+                  </FlowPane>
+               </children>
+            </FlowPane>
+         </children>
+      </GridPane>
+      <GridPane GridPane.rowIndex="4">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="450.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="450.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button mnemonicParsing="true" onAction="#reset" prefHeight="50.0" prefWidth="450.0" text="_Reset" />
+            <Button mnemonicParsing="true" onAction="#exit" prefHeight="50.0" prefWidth="450.0" text="E_xit" GridPane.columnIndex="1" />
+         </children>
+      </GridPane>
+   </children>
+    <stylesheets>
+        <URL value="@css/main.css" />
+    </stylesheets>
+</GridPane>

@@ -1,0 +1,28 @@
+Label, Button {
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+}
+
+#mainTitle {
+    -fx-font-size: 40px;
+}
+
+#lblCompScore, #lblPlayerScore, .scoreLabel {
+    -fx-font-size: 24px;
+}
+
+#lblWinner {
+    -fx-padding: 10px 0;
+}
+
+.panelPlayer {
+    -fx-background-color: blue;
+}
+
+.panelSelected {
+    -fx-background-color: green;
+}
+
+.panelComp {
+  -fx-background-color: black;
+}
